@@ -50,7 +50,7 @@ router.post('/', function(req, res, next) {
 
 router.delete('/:userId', function(req, res, next) {
   VideoGame.findOneAndDelete({
-    id: req.params.id
+    identifier: req.params.userId
   }, function(err, data) {
     if (err) {
       res.status(404).json(err);
