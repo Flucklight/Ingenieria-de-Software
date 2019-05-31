@@ -2,10 +2,10 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var VideogameSchema =  Schema({
-  id:Number,
+  identifier:Number,
   title:String,
   plataform:String,
-  since:Number
+  since:String
 });
 
 module.exports = mongoose.model('videojuegos', VideogameSchema);

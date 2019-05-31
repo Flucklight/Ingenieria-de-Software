@@ -1,8 +1,26 @@
-<h1>Alta de usuario</h1>
-<form class="api/user/form" action="index.html" method="put">
-  <input type="text" name="id" >
-  <input type="text" name="name" >
-  <input type="text" name="lastname" >
-  <input type="text" name="age" >
-  <input type="button"  value="Guardar">
+<h1>Busqueda de videojuego</h1>
+
+<form action="/api/users/" method="GET">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Identificador</label>
+    <input type="number" class="form-control" id="formGroupExampleInput" name="identifier" placeholder="ID">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Nombre del VideoJuego</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="title" placeholder="Nombre">
+  </div>
+  <div class="form-group col-md-4">
+      <label for="inputState">Plataforma</label>
+      <select id="inputState" class="form-control" name="plataform">
+        <option selected>PC</option>
+        <option>Microsoft</option>
+        <option>Sony</option>
+        <option>Nintendo</option>
+      </select>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Fecha de lanzamiento</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name="since" placeholder="Dia/Mes/Año">
+  </div>
+  <button type="submit" class="btn btn-primary">Guardar</button>
 </form>

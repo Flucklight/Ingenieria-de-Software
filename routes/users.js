@@ -31,13 +31,11 @@ router.get('/:userId', function(req, res, next) {
 
 router.post('/', function(req, res, next) {
   var videojuego = VideoGame({
-    id: req.body.id,
+    identifier: req.body.identifier,
     title: req.body.title,
     plataform: req.body.plataform,
     since: req.body.since
   });
-  //res.send(usuario);
-
 
   videojuego.save(function(err, data) {
     if (err) {
