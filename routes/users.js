@@ -63,5 +63,23 @@ router.delete('/',function(req,res,next){
   res.status(405).json({mensaje:'Accion no permitida'});
 });
 
+router.patch('/:userId', function(req, res, next) {
+  VideoGame.findOneAndUpdate({identifier: req.params.userId},{$set:{identifier:50}},
+  function(err, datos) {
+    if (datos == null) {
+      res.status(404).json({
+        mensaje: "No existe"
+      });
+    } else {
+      res.status(200).json(datos);
+      {mensaje: "se ha cambiado exitosamente el ID"}
+    }
+
+  });
+
+});
+router.patch('/',function(req,res,next){
+  res.status(405).json({mensaje:'Accion no permitida'});
+});
 
 module.exports = router;
