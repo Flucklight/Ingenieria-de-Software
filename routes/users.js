@@ -14,8 +14,7 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/:userId', function(req, res, next) {
-  VideoGame.findOne({
-    'id': req.params.id
+  VideoGame.findOne({'identifier': req.params.userId
   }, function(err, datos) {
     if (datos == null) {
       res.status(404).json({
