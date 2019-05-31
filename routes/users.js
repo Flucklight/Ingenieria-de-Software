@@ -2,11 +2,11 @@ var express = require('express');
 var router = express.Router();
 
 var mongoose = require('mongoose');
-var User = require('../models/user');
+var VideoGame = require('../models/videogame');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  User.find({}, function(err, datos) {
+  VideoGame.find({}, function(err, datos) {
     res.status(200).json(datos);
   });
 
@@ -14,8 +14,8 @@ router.get('/', function(req, res, next) {
 
 
 router.get('/:userId', function(req, res, next) {
-  User.findOne({
-    'id': req.params.userId
+  VideoGame.findOne({
+    'id': req.params.id
   }, function(err, datos) {
     if (datos == null) {
       res.status(404).json({
@@ -30,16 +30,16 @@ router.get('/:userId', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-  var usuario = User({
+  var videojuego = VideoGame({
     id: req.body.id,
-    name: req.body.name,
-    lastname: req.body.lastname,
-    age: req.body.age
+    title: req.body.title,
+    plataform: req.body.plataform,
+    since: req.body.since
   });
   //res.send(usuario);
 
 
-  usuario.save(function(err, data) {
+  videojuego.save(function(err, data) {
     if (err) {
       res.status(404).json({
         mensaje: "Error al guardar"
@@ -52,8 +52,8 @@ router.post('/', function(req, res, next) {
 });
 
 router.delete('/:userId', function(req, res, next) {
-  User.findOneAndDelete({
-    id: req.params.userId
+  VideoGame.findOneAndDelete({
+    id: req.params.id
   }, function(err, data) {
     if (err) {
       res.status(404).json(err);
