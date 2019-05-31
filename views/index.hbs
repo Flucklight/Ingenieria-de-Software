@@ -1,5 +1,7 @@
 <h1>{{title}}</h1>
-<p>Sanchez Sanchez Victor Manuel {{title}}</p>
+<p>{{title}} de Sanchez Sanchez Victor Manuel </p>
+
+<h6></h6>
 
 <h1>Alta de videojuego</h1>
 
@@ -13,17 +15,122 @@
     <input type="text" class="form-control" id="formGroupExampleInput2" name="title" placeholder="Nombre">
   </div>
   <div class="form-group col-md-4">
-      <label for="inputState">Plataforma</label>
-      <select id="inputState" class="form-control" name="plataform">
-        <option selected>PC</option>
-        <option>Microsoft</option>
-        <option>Sony</option>
-        <option>Nintendo</option>
+      <label for="inputState">Nintendo</label>
+      <select id="inputState" class="form-control" name="nintendo">
+        <option selected>....</option>
+        <option>Switch</option>
+        <option>WiiU</option>
+        <option>Wii</option>
+        <option>GameCube</option>
+        <option>Nintendo 64</option>
       </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputState">PC</label>
+    <select id="inputState" class="form-control" name="pc">
+      <option selected>....</option>
+      <option>PC</option>
+    </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputState">Sony</label>
+    <select id="inputState" class="form-control" name="sony">
+      <option selected>....</option>
+      <option>PlayStation 4</option>
+      <option>PlayStation 3</option>
+      <option>PlayStation 2</option>
+      <option>PlayStation</option>
+    </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputState">Microsoft</label>
+    <select id="inputState" class="form-control" name="microsoft">
+      <option selected>....</option>
+      <option>Xbox One</option>
+      <option>Xbox 360</option>
+      <option>Xbox</option>
+    </select>
   </div>
   <div class="form-group">
     <label for="formGroupExampleInput">Fecha de lanzamiento</label>
     <input type="text" class="form-control" id="formGroupExampleInput" name="since" placeholder="Dia/Mes/Año">
   </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Imagen</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name="image" placeholder="Dia/Mes/Año">
+  </div>
   <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+
+<h6></h6>
+
+<h1>Busqueda de videojuego</h1>
+
+<form action="/api/users/" method="GET">
+  <div class="form-group">
+    <label for="formGroupExampleInput">Identificador</label>
+    <input type="number" class="form-control" id="formGroupExampleInput1" name="identifier" placeholder="ID">
+  </div>
+  <button type="submit" class="btn btn-primary">Buscar</button>
+</form>
+
+<h6></h6>
+
+<h1>Remplaza un videojuego</h1>
+
+<form action="/api/users/" method="PUT">
+  <div class="form-group">  
+    <label for="formGroupExampleInput">Identificador</label>
+    <input type="number" class="form-control" id="formGroupExampleInput" name="identifier" placeholder="ID">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput2">Nombre del VideoJuego</label>
+    <input type="text" class="form-control" id="formGroupExampleInput2" name="title" placeholder="Nombre">
+  </div>
+  <div class="form-group col-md-4">
+      <label for="inputState">Nintendo</label>
+      <select id="inputState" class="form-control" name="nintendo">
+        <option selected>....</option>
+        <option>Switch</option>
+        <option>WiiU</option>
+        <option>Wii</option>
+        <option>GameCube</option>
+        <option>Nintendo 64</option>
+      </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputState">PC</label>
+    <select id="inputState" class="form-control" name="pc">
+      <option selected>....</option>
+      <option>PC</option>
+    </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputState">Sony</label>
+    <select id="inputState" class="form-control" name="sony">
+      <option selected>....</option>
+      <option>PlayStation 4</option>
+      <option>PlayStation 3</option>
+      <option>PlayStation 2</option>
+      <option>PlayStation</option>
+    </select>
+  </div>
+  <div class="form-group col-md-4">
+    <label for="inputState">Microsoft</label>
+    <select id="inputState" class="form-control" name="microsoft">
+      <option selected>....</option>
+      <option>Xbox One</option>
+      <option>Xbox 360</option>
+      <option>Xbox</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Fecha de lanzamiento</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name="since" placeholder="Dia/Mes/Año">
+  </div>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Imagen</label>
+    <input type="text" class="form-control" id="formGroupExampleInput" name="image" placeholder="Dia/Mes/Año">
+  </div>
+  <button type="submit" class="btn btn-primary">Remplazar</button>
 </form>
